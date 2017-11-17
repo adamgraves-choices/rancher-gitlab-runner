@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  gitlab-runner:
+    image: nhsuk/rancher-gitlab-runner:$DOCKER_IMAGE_TAG
+    environment:
+      GITLAB_URL: $GITLAB_URL
+      GITLAB_TOKEN: $GITLAB_TOKEN
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global: true
+      io.rancher.container.hostname_override: container_name
