@@ -28,8 +28,6 @@ if [ "$*" = "gitlab-runner" ]; then
     export REGISTRATION_TOKEN=${GITLAB_TOKEN}
     export RUNNER_EXECUTOR="docker"
     export DOCKER_IMAGE="docker:git"
-    export DOCKER_VOLUMES="/var/run/docker.sock:/var/run/docker.sock"
-    export DOCKER_PRIVILEGED=true
     export REGISTER_NON_INTERACTIVE=true
 
     gitlab-runner register
