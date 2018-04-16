@@ -7,8 +7,6 @@ services:
     environment:
       GITLAB_URL: $GITLAB_URL
       GITLAB_TOKEN: $GITLAB_TOKEN
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
     labels:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.global: true
