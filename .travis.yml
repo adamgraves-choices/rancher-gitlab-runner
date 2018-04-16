@@ -1,3 +1,7 @@
 services: docker
 
-script: bash ./scripts/deploy.sh
+env:
+  # Deploy docker images but don't try to deploy to rancher
+  - DEPLOY_BUILD=false
+
+script: bash echo $DEPLOY_BUILD && ./scripts/deploy.sh
